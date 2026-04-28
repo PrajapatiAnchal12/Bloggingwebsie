@@ -1,0 +1,28 @@
+npm create vite@latest
+npm install
+npm run dev
+npm install react-router-dom
+npm install react-icons
+mkdir backend; cd backend; npm init -y;
+ npm install express mongoose cors dotenv;
+  npm install -D nodemon
+npm install react-quill axios --legacy-peer-deps
+
+  npm install react-quill axios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Add filter, bulk delete option

@@ -1,0 +1,27 @@
+/* home.css */
+
+.home-content-area {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.home-main-col {
+    flex: 1; /* Takes remaining space */
+    min-width: 0; /* Prevents flexbox overflow issues */
+}
+
+.home-sidebar-col {
+    width: 330px; /* Fixed width sidebar */
+    flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+    .home-content-area {
+        flex-direction: column;
+    }
+    .home-sidebar-col {
+        width: 100%;
+    }
+}

@@ -1,0 +1,136 @@
+.latest-news-section {
+    padding: 30px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Yahi wo class hai jo Banner jaisa alignment degi */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* SECTION HEADER STYLING */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-header .title {
+    background: #e94560;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-header .title .dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.section-header .line {
+    flex-grow: 1;
+    border-bottom: 2px dotted #e94560;
+    opacity: 0.4;
+    margin: 0 20px;
+}
+
+.section-header .controls {
+    display: flex;
+    gap: 10px;
+}
+
+.section-header .controls button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.section-header .controls button:hover:not(:disabled) {
+    border-color: #e94560;
+    color: #e94560;
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(233, 69, 96, 0.2);
+}
+
+/* SLIDER STRUCTURE */
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 -15px;
+    padding: 10px 0;
+}
+
+.news-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slider-item {
+    flex-shrink: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Button Disabled State */
+.section-header .controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #eee;
+    color: #ccc;
+}
+
+.section-header .controls button:disabled:hover {
+    background: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-header .title {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header .line {
+        display: none;
+    }
+    .section-header {
+        justify-content: space-between;
+    }
+    
+    /* Mobile me 60px gap mita do, basic 16px gap rkho */
+    .slider-wrapper {
+        margin: 0 -8px;
+    }
+    .slider-item {
+        padding: 0 8px;
+    }
+}

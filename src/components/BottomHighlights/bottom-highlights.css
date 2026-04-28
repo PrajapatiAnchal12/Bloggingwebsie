@@ -1,0 +1,48 @@
+/* bottom-highlights.css */
+.bottom-highlights-section {
+    margin-bottom: 60px; /* Space before footer */
+}
+
+.bh-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.bh-card {
+    height: 240px;
+}
+
+.bh-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Extra Theme Colors for Section Headers */
+.section-header-block.teal-theme .sh-title { 
+    background: #00c4cc; 
+}
+.section-header-block.teal-theme .sh-line { 
+    border-bottom-color: #00c4cc; 
+}
+
+.section-header-block.purple-theme .sh-title { 
+    background: #9900cc; 
+}
+.section-header-block.purple-theme .sh-line { 
+    border-bottom-color: #9900cc; 
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .bh-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .bh-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,60 @@
+/* lifestyle-news.css */
+
+.lifestyle-news-section {
+    margin-bottom: 50px;
+}
+
+.lifestyle-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.ls-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ls-top-card {
+    height: 320px;
+    width: 100%;
+}
+
+.ls-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Orange Theme for Header */
+.orange-theme .sh-title {
+    background-color: #ff8c00; /* Dark Orange like image */
+    color: white;
+}
+
+.orange-theme .sh-title .dot {
+    background-color: white;
+}
+
+.orange-theme .sh-line {
+    border-bottom: 2px dotted #ff8c00;
+    flex-grow: 1;
+    margin-left: 10px;
+    height: 12px;
+}
+
+@media (max-width: 768px) {
+    .lifestyle-columns {
+        grid-template-columns: 1fr;
+    }
+    .ls-top-card {
+        height: 250px;
+    }
+}
+
+/* Lifestyle specific orange badges */
+.lifestyle-news-section .slc-category,
+.lifestyle-news-section .category-badge {
+    background-color: #ff8c00 !important;
+}

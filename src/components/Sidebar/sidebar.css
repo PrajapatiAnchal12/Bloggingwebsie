@@ -1,0 +1,86 @@
+/* sidebar.css */
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar-block {
+    display: block;
+}
+
+/* Social Followers */
+.social-followers {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sf-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sf-icon:hover { transform: scale(1.1); }
+
+/* Brand Colors */
+.sf-icon.rss { background: #f39c12; }
+.sf-icon.facebook { background: #3498db; }
+.sf-icon.twitter { background: #00acee; }
+.sf-icon.google { background: #dd4b39; }
+.sf-icon.vimeo { background: #86c9ef; }
+.sf-icon.youtube { background: #c4302b; }
+
+/* Popular News Layout */
+.pn-large-card {
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.pn-small-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Trending News Layout */
+.tn-large-card {
+    height: 220px;
+}
+
+/* Sidebar Section Headers (Overrides from generic) */
+.section-header-block.black-theme .sh-title {
+    background: #000;
+}
+.section-header-block.black-theme .sh-line {
+    border-bottom-color: #000;
+}
+.sh-controls {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+.sh-controls button {
+    background: none;
+    border: 1px solid #ddd;
+    color: #888;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 10px;
+    transition: 0.3s;
+}
+.sh-controls button:hover {
+    border-color: red;
+    color: red;
+}

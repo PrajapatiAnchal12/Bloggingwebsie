@@ -1,0 +1,104 @@
+/* Reset */
+body {
+  margin: 0;
+}
+
+/* Topbar FULL WIDTH */
+.topbar {
+  width: 100%;
+  background: #111;
+}
+
+.topbar-container {
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Login Button */
+.login-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Circle */
+.social-icons span {
+  width: 35px;
+  height: 35px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+/* ICON COLOR FIX */
+.social-icons span svg {
+  color: white;
+  font-size: 14px;
+}
+
+
+
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #f3f3f3;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  height: 60px;
+}
+
+/* Banner */
+.banner img {
+  height: 90px;
+}
+
+/* End of Navbar */
+
+/* Responsive Headers */
+@media (max-width: 768px) {
+  .topbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navbar-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .social-icons span {
+    width: 30px;
+    height: 30px;
+  }
+}

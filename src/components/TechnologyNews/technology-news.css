@@ -1,0 +1,138 @@
+/* technology-news.css */
+
+.technology-news-section {
+    margin-bottom: 40px;
+}
+
+/* Reusable Section Header Block (can be used by other components) */
+.section-header-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.sh-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.sh-title::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+}
+.sh-title { padding-left: 20px; }
+
+.sh-line {
+    flex: 1;
+    border-bottom: 2px dotted #ccc;
+    position: relative;
+    top: 2px;
+}
+
+.sh-tabs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.sh-tab {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.sh-tab:hover {
+    border-color: #aaa;
+}
+
+.sh-tab.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* Theme Colors for Headers */
+.blue-theme .sh-title { 
+    background: #007bff; 
+}
+.blue-theme .sh-line { 
+    border-bottom-color: #007bff; 
+    opacity: 0.3;
+}
+
+/* Grid Layout for Tech News */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.tech-main-post .news-card-img {
+    height: 350px;
+}
+
+.tech-main-post .news-card-title {
+    font-size: 22px;
+    height: auto;
+    margin: 15px 0;
+}
+
+.tech-main-post .news-card-desc {
+    display: block !important;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.tech-main-post .news-card-meta {
+    border: none;
+    padding: 0;
+}
+
+
+.tech-list-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-header-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .sh-line {
+        display: none;
+    }
+    .sh-tabs {
+        margin-left: 0;
+    }
+}

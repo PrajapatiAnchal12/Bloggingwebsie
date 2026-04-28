@@ -1,0 +1,67 @@
+/* more-news.css */
+
+.newsletter-box {
+    background-color: #f7f7f7;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.nl-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.nl-div-line {
+    width: 30px;
+    height: 3px;
+    background-color: red;
+    margin: 0 auto 20px auto;
+}
+
+.nl-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.nl-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nl-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nl-form input:focus {
+    border-color: #aaa;
+}
+
+.nl-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nl-form button:hover {
+    background-color: #cc0000;
+}
