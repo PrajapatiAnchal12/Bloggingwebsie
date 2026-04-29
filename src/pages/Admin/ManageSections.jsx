@@ -16,7 +16,7 @@ const ManageSections = () => {
 
     const fetchSections = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/sections');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections');
             setSections(res.data);
         } catch (error) {
             console.error("Error fetching sections:", error);
@@ -30,7 +30,7 @@ const ManageSections = () => {
             if (editId) {
                 await axios.put(`http://localhost:5000/api/sections/${editId}`, { name });
             } else {
-                await axios.post('http://localhost:5000/api/sections', { name });
+                await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections', { name });
             }
             setName('');
             setEditId(null);

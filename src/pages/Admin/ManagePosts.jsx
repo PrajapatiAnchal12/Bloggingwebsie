@@ -20,7 +20,7 @@ const ManagePosts = () => {
 
     const fetchPosts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/posts');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts');
             setPosts(res.data);
         } catch (error) {
             console.error("Error fetching posts:", error);
@@ -31,7 +31,7 @@ const ManagePosts = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/categories');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
             setCategories(res.data);
         } catch (error) {
             console.error("Error fetching categories:", error);
@@ -54,7 +54,7 @@ const ManagePosts = () => {
         if (selectedPosts.length === 0) return;
         if (window.confirm(`Are you sure you want to delete ${selectedPosts.length} posts?`)) {
             try {
-                await axios.post('http://localhost:5000/api/posts/bulk-delete', { ids: selectedPosts });
+                await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts/bulk-delete', { ids: selectedPosts });
                 setSelectedPosts([]);
                 fetchPosts();
                 alert('Posts deleted successfully');

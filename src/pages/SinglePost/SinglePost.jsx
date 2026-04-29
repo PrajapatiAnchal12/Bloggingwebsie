@@ -31,11 +31,11 @@ const SinglePost = () => {
                 setRelatedPosts(relatedRes.data.filter(p => p._id !== id).slice(0, 4));
 
                 // 3. Fetch Popular News for Sidebar
-                const popularRes = await axios.get('http://localhost:5000/api/posts?sort=popular');
+                const popularRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts?sort=popular');
                 setPopularNews(popularRes.data.slice(0, 4));
 
                 // 4. Fetch Categories
-                const catRes = await axios.get('http://localhost:5000/api/categories');
+                const catRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
                 setCategories(catRes.data);
 
             } catch (error) {

@@ -33,7 +33,7 @@ const AddPost = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/categories');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
             setCategoriesList(res.data);
         } catch (error) {
             console.error("Error fetching categories:", error);
@@ -42,7 +42,7 @@ const AddPost = () => {
 
     const fetchSections = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/sections');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections');
             setSectionsList(res.data);
         } catch (error) {
             console.error("Error fetching sections:", error);
@@ -54,7 +54,7 @@ const AddPost = () => {
     const handleAddSectionModal = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/sections', { name: newSecName });
+            await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections', { name: newSecName });
             setNewSecName('');
             await fetchSections();
             setShowSecModal(false);
@@ -91,7 +91,7 @@ const AddPost = () => {
     const handleAddCategory = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/categories', { name: newCatName, color: newCatColor });
+            await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories', { name: newCatName, color: newCatColor });
             setNewCatName('');
             await fetchCategories();
             setShowCatModal(false);
@@ -156,7 +156,7 @@ const AddPost = () => {
                 await axios.put(`http://localhost:5000/api/posts/${id}`, postData);
                 navigate('/admin/manage-posts');
             } else {
-                await axios.post('http://localhost:5000/api/posts', postData);
+                await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts', postData);
                 setTitle('');
                 setCategory('');
                 setSection('');
@@ -184,7 +184,7 @@ const AddPost = () => {
 
         setUploading(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/upload', formData, {
+            const res = await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setImage(`http://localhost:5000${res.data.image}`);
