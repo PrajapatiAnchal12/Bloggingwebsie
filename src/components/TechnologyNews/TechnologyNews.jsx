@@ -15,7 +15,7 @@ const TechnologyNews = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
+                const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/categories');
                 const fetchedCategories = res.data.slice(0, 4);
                 setCategories(fetchedCategories);
             } catch (error) {
@@ -29,7 +29,7 @@ const TechnologyNews = () => {
         const fetchTechNews = async () => {
             setLoading(true);
             try {
-                const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts');
+                const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/posts');
                 const allPosts = Array.isArray(res.data) ? res.data : [];
 
                 if (allPosts.length === 0) {

@@ -16,7 +16,7 @@ const ManageSections = () => {
 
     const fetchSections = async () => {
         try {
-            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/sections');
             setSections(res.data);
         } catch (error) {
             console.error("Error fetching sections:", error);
@@ -28,9 +28,9 @@ const ManageSections = () => {
         setLoading(true);
         try {
             if (editId) {
-                await axios.put(`http://localhost:5000/api/sections/${editId}`, { name });
+                await axios.put(`https://blog-backend-i5u0.onrender.com/api/sections/${editId}`, { name });
             } else {
-                await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/sections', { name });
+                await axios.post((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/sections', { name });
             }
             setName('');
             setEditId(null);
@@ -57,7 +57,7 @@ const ManageSections = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this section?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/sections/${id}`);
+                await axios.delete(`https://blog-backend-i5u0.onrender.com/api/sections/${id}`);
                 fetchSections();
             } catch (error) {
                 alert('Error deleting section');

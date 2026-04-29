@@ -15,11 +15,11 @@ const Footer = () => {
         const fetchData = async () => {
             try {
                 // Fetch Real Categories
-                const catRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
+                const catRes = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/categories');
                 setCategories(catRes.data);
 
                 // Fetch Popular Posts (Top 3 by views)
-                const postRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts?sort=popular');
+                const postRes = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/posts?sort=popular');
                 setPopularPosts(postRes.data.slice(0, 3));
             } catch (error) {
                 console.error("Error fetching footer data:", error);

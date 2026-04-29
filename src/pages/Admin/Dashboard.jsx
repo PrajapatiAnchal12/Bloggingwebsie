@@ -15,7 +15,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts/stats');
+                const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/posts/stats');
                 setStats(res.data);
             } catch (error) {
                 console.error("Error fetching stats:", error);

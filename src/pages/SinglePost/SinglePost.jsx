@@ -23,19 +23,19 @@ const SinglePost = () => {
             try {
                 setLoading(true);
                 // 1. Fetch Current Post
-                const res = await axios.get(`http://localhost:5000/api/posts/${id}`);
+                const res = await axios.get(`https://blog-backend-i5u0.onrender.com/api/posts/${id}`);
                 setPost(res.data);
 
                 // 2. Fetch Related Posts (same category)
-                const relatedRes = await axios.get(`http://localhost:5000/api/posts?category=${res.data.category}`);
+                const relatedRes = await axios.get(`https://blog-backend-i5u0.onrender.com/api/posts?category=${res.data.category}`);
                 setRelatedPosts(relatedRes.data.filter(p => p._id !== id).slice(0, 4));
 
                 // 3. Fetch Popular News for Sidebar
-                const popularRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts?sort=popular');
+                const popularRes = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/posts?sort=popular');
                 setPopularNews(popularRes.data.slice(0, 4));
 
                 // 4. Fetch Categories
-                const catRes = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
+                const catRes = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/categories');
                 setCategories(catRes.data);
 
             } catch (error) {

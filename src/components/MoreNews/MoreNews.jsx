@@ -16,7 +16,7 @@ const MoreNews = () => {
     useEffect(() => {
         const fetchMoreNews = async () => {
             try {
-                const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/posts');
+                const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/posts');
                 const allPosts = Array.isArray(res.data) ? res.data : [];
 
                 // Pagination logic for 3 slides

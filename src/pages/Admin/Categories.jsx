@@ -17,7 +17,7 @@ const Categories = () => {
 
     const fetchCategories = async () => {
         try {
-            const res = await axios.get((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories');
+            const res = await axios.get((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/categories');
             setCategories(res.data);
         } catch (error) {
             console.error("Error fetching categories:", error);
@@ -30,10 +30,10 @@ const Categories = () => {
         try {
             if (editId) {
                 // Update Category
-                await axios.put(`http://localhost:5000/api/categories/${editId}`, { name, color });
+                await axios.put(`https://blog-backend-i5u0.onrender.com/api/categories/${editId}`, { name, color });
             } else {
                 // Add Category
-                await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api/categories', { name, color });
+                await axios.post((import.meta.env.VITE_API_URL || 'https://blog-backend-i5u0.onrender.com') + '/api/categories', { name, color });
             }
             setName('');
             setColor('red');
@@ -62,7 +62,7 @@ const Categories = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this category?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/categories/${id}`);
+                await axios.delete(`https://blog-backend-i5u0.onrender.com/api/categories/${id}`);
                 fetchCategories();
             } catch (error) {
                 alert('Error deleting category');
